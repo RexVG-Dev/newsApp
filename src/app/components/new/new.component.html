@@ -1,0 +1,26 @@
+<ion-card color="dark">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <span class="text-primary">{{indice+1}}.</span>
+      <span class="noticia-source-name">{{new.source.name}}</span>
+      <span class="noticia-source-name" style="margin-left: 10px; display: block;">{{new.publishedAt | date: "dd/MM/y"}}</span>
+      <div class="more-new">
+        <ion-button fill="clear" (click)="showMenu(new)">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
+      </div>
+      <!-- <div></div> -->
+      <!-- <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+      </ion-item> -->
+    </ion-card-subtitle>
+    <ion-card-title (click)="openNew(new)">{{new.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-img *ngIf="new.urlToImage" [src]="new.urlToImage" (click)="openNew(new)" class="animated fadeIn fast"></ion-img>
+
+  <ion-card-content>
+    <p>{{new.description}}</p>
+  </ion-card-content>
+</ion-card>

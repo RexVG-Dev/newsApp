@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      <div class="cont-title">
+        <span>Tyrannus-News</span>
+        <!-- <small>
+          <ion-item class="cont-select" color="dark">
+              <ion-label>País: </ion-label>
+              <ion-select [(ngModel)]="countSelected" (ionChange)="onSelCountry()">
+                <ion-select-option selected [value]="countSelected">{{countSelected.acronym}}</ion-select-option>
+                <ion-select-option [value]="pais" 
+                    *ngFor="let pais of paises">{{pais.country}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+        </small> -->
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <app-news [news]="news"></app-news>
+
+  <ion-infinite-scroll threshold="10px" [disabled]="flagScroll" position="bottom" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando noticias...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
