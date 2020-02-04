@@ -48,8 +48,8 @@ export class LocaldataService {
   async presentToast( message: string){
     const toast = await this.toastCtrl.create({
       message,
-      duration: 3000,
-      position: 'middle',
+      duration: 30000,
+      position: 'bottom',
       buttons: [
         {
           text: 'X',
